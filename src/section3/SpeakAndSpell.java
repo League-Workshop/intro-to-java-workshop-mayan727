@@ -9,10 +9,19 @@ public class SpeakAndSpell {
 
 	public static void main(String[] args) {
 		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
+		speak("mississippi");
 
 		// 2. Catch the user's answer in a String
+		String Answer= JOptionPane.showInputDialog("spell the word");
 
 		// 3. If the user spelled the word correctly, speak "correct"
+		if(Answer.equals("mississippi")) {
+		JOptionPane.showMessageDialog(null,"correct!");
+		}else{
+		JOptionPane.showMessageDialog(null,"WRONG");
+		}
+		
+		
 
 		// 4. Otherwise say "wrong"
 
