@@ -16,43 +16,60 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
-	
+	 Robot mews = new Robot ("mini");
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
+		mews.setAngle(0);
+		mews.microMove(10);
 		
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
+		mews.setAngle(180);
+		mews.microMove(10);
 		
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
+		mews.setAngle(270);
+		mews.microMove(10);
 
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		mews.setAngle(90);
+		mews.microMove(10);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = mews.getX();
+		int robotYLocation = mews.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
+		System.out.println(robotXLocation  + "    " + robotYLocation);
 		
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
+		if(robotXLocation==720 && robotYLocation==410) {
+		JOptionPane.showMessageDialog(null,"go to the birds");
+		}
 		
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
-		
+		if(robotXLocation== 600 && robotYLocation==150) {
+		JOptionPane.showMessageDialog(null, "look at those chickens! Back to what i was saying go to the dead fish");
+		}
+		if(robotXLocation==470 && robotYLocation== 550) {
+			JOptionPane.showMessageDialog(null, "Yay you won! Probably weren't expecting this as the treasure but heres dinner for tonight");
+		}
 		// 9.  If the robot is in the final location
 		//     --call the treasureFound() method
+		
 		
 	}
 
